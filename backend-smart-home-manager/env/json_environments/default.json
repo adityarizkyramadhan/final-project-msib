@@ -1,0 +1,11 @@
+{
+  "NODE_ENV": "development",
+  "PORT": "1333",
+  "DATA_BASE_TEST":"mysql://root:password@mydb:3306/restTemplate",
+  "DB_NAME": "clips_development",
+  "DB_USERNAME": "",
+  "DB_PASSWORD": "",
+  "DB_HOST": "localhost",
+  "DB_PORT": 3306,
+  "JWT_SECRET": "hdskjdaskljdskjhdkjashdkjasdkjsa7878678%$%$%56"
+}

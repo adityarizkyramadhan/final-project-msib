@@ -1,0 +1,6 @@
+@BASE_URL=http://localhost:3000
+
+### Get all banner
+GET {{BASE_URL}}/banner
+Accept: application/json
+

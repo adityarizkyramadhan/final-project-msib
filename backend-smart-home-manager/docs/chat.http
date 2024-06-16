@@ -1,0 +1,17 @@
+@BASE_URL=http://localhost:3000
+@TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA1MmFmYjYxLWUyMTktNGRkOS05YTlhLTFmMWQ3YTEyNDg1ZSIsImlhdCI6MTcxNDE3NDU2OCwiZXhwIjoxNzE0MjYwOTY4fQ.9u5TLo9dKpyJRZuTjHA4etzcf4DOjbXY1DrCyaW-2D4
+
+### Chat
+POST {{BASE_URL}}/chat
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+  "prompt": "Bagaimana cara menghemat listrik?"
+}
+
+
+### Chat FindAll
+GET {{BASE_URL}}/chat
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}

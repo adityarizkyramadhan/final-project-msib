@@ -1,0 +1,21 @@
+@BASE_URL=http://hackfest-2024.adityaariizkyy.my.id
+
+### Create a new user
+POST {{BASE_URL}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "adityarizky1020@gmail.com",
+  "password": "password123",
+  "complete_name": "Aditya Rizky"
+}
+
+
+### Login as a user
+POST {{BASE_URL}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "adityarizky1020@gmail.com",
+  "password": "password123"
+}

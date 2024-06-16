@@ -1,0 +1,52 @@
+{
+  "name": "backend-service",
+  "author": {
+    "name": "Aditya Rizky Ramadhan",
+    "email": "adityarizky1020@gmail.com"
+  },
+  "scripts": {
+    "createdb": "npx sequelize-cli db:create",
+    "deletedb": "npx sequelize-cli db:drop",
+    "migratedb": "npx sequelize-cli db:migrate",
+    "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migratedb",
+    "generate:migration": "npx sequelize-cli migration:generate --name",
+    "generate:model": "npx sequelize-cli model:generate --name",
+    "generate:seed": "npx sequelize-cli seed:generate --name",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo --name",
+    "seed:undo": "npx sequelize-cli db:seed:undo --name",
+    "seed:all": "npx sequelize-cli db:seed:all",
+    "seed": "npx sequelize-cli db:seed:all",
+    "test:setup": "cross-env NODE_ENV=test npm run deletedb && cross-env NODE_ENV=test npm run createdb && cross-env NODE_ENV=test && cross-env NODE_ENV=test npm run migrate:reset",
+    "test": "jest --detectOpenHandles --verbose false --force-exit",
+    "start": "nodemon ./bin/www",
+    "start:local": "cross-env NODE_ENV=local nodemon ./bin/www",
+    "start:staging": "cross-env NODE_ENV=staging node ./bin/www",
+    "start:development": "cross-env DEBUG=authorization-service:* & cross-env NODE_ENV=development & nodemon ./bin/www",
+    "start:production": "pm2 start ./bin/www",
+    "start:test": "cross-env NODE_ENV=test nodemon ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.0.1",
+    "firebase-admin": "^12.1.0",
+    "flaverr": "^1.10.0",
+    "fs": "^0.0.1-security",
+    "http-errors": "^2.0.0",
+    "jade": "^1.11.0",
+    "jest": "^29.7.0",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "mariadb": "^3.3.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.9.7",
+    "openai": "^4.38.5",
+    "path": "^0.12.7",
+    "sequelize": "^6.37.3",
+    "supertest": "^7.0.0"
+  }
+}

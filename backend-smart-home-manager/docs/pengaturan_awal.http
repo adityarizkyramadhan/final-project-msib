@@ -1,0 +1,33 @@
+@TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk4ZTgzZmY1LTE4ODEtNGE0ZS1iYzkwLTBhMmNhY2Q3NGM1ZSIsImlhdCI6MTcxNDI2MTk4OCwiZXhwIjoxNzE0MzQ4Mzg4fQ.MgVuMw80XWeBg5a1282XB02c1HC5623sZePvcFC5xeo
+@BASE_URL=http://localhost:3000
+
+POST {{BASE_URL}}/informasi-listrik
+Authorization: Bearer {{TOKEN}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "daya": "900",
+  "jenis_pembayaran": "contoh_jenis_pembayaran",
+  "perangkat_listrik": [
+    {
+      "jenis_perangkat": "AC Non-Inverter",
+      "jumlah": 5,
+      "daya_listrik": 500,
+      "lama_pemakaian": 9
+    },
+    {
+      "jenis_perangkat": "Lampu LED",
+      "jumlah": 10,
+      "daya_listrik": 20,
+      "lama_pemakaian": 10
+    }
+  ]
+}
+
+### Check is completed
+GET {{BASE_URL}}/informasi-listrik/check-is-complete
+Authorization: Bearer {{TOKEN}}
+Accept: application/json
+
+

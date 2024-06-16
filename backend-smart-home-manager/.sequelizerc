@@ -1,0 +1,9 @@
+if (process.env.KUBERNETES != "TRUE") {
+  require('./env');
+}
+const path = require('path');
+
+module.exports = {
+  'config': path.resolve('config', 'config.js'),
+  'models-path': path.resolve('app', 'models'),
+}
