@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	main "a21hc3NpZ25tZW50"
+	main "github.com/adityarizkyramadhan/ai-chat-bot"
 
 	"github.com/joho/godotenv"
 	. "github.com/onsi/ginkgo/v2"
