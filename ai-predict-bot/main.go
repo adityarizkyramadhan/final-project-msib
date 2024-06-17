@@ -5,8 +5,12 @@ import (
 	"fmt"
 	"html/template"
 	"io"
+	"log"
 	"net/http"
+	"os"
 	"strings"
+
+	"github.com/joho/godotenv"
 )
 
 type AIModelConnector struct {
@@ -202,6 +206,9 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	if err := godotenv.Load(); err != nil {
+		log.Fatal("Error loading .env file")
+	}
 	http.HandleFunc("/", handleHome)
 	http.HandleFunc("/query", handleQuery)
 	fmt.Println("Server is running on port 8080")
