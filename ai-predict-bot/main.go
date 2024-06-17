@@ -124,7 +124,7 @@ func handleQuery(w http.ResponseWriter, r *http.Request) {
 		Client: &http.Client{},
 	}
 
-	token := "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" // Ganti dengan token Anda yang sebenarnya
+	token := os.Getenv("HUGGINGFACE_TOKEN") // Ganti dengan token Anda yang sebenarnya
 	response, err := connector.ConnectAIModel(payload, token)
 	if err != nil {
 		http.Error(w, "Failed to connect to AI model", http.StatusInternalServerError)
