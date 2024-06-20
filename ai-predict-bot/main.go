@@ -9,13 +9,14 @@ import (
 	"a21hc3NpZ25tZW50/usecase"
 	"encoding/json"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"html/template"
 	"io"
 	"log"
 	"net/http"
 	"os"
 	"strings"
+
+	"github.com/gin-gonic/gin"
 
 	"github.com/joho/godotenv"
 )
@@ -25,8 +26,9 @@ type AIModelConnector struct {
 }
 
 type Inputs struct {
-	Table map[string][]string `json:"table"`
-	Query string              `json:"query"`
+	Table        map[string][]string `json:"table"`
+	Query        string              `json:"query"`
+	WaitForModel bool                `json:"wait_for_model"`
 }
 
 type Response struct {
@@ -122,8 +124,9 @@ func handleQuery(c *gin.Context) {
 	}
 
 	payload := Inputs{
-		Table: result,
-		Query: query,
+		Table:        result,
+		Query:        query,
+		WaitForModel: true,
 	}
 
 	connector := AIModelConnector{
@@ -214,7 +217,7 @@ func handleQuery(c *gin.Context) {
 			<h1>Query Result</h1>
 			<a href="/profile" class="logout-btn">Back to home</a>
 		</div>
-	
+
 		<div class="profile-container">
 			<div class="profile-info">
 				<label>Answer:</label>
