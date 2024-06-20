@@ -4,8 +4,9 @@ import (
 	"a21hc3NpZ25tZW50/model"
 	"a21hc3NpZ25tZW50/usecase"
 	"a21hc3NpZ25tZW50/utils"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 type UserHandler struct {
@@ -36,7 +37,7 @@ func (h *UserHandler) Login(ctx *gin.Context) {
 		utils.ErrorResponse(ctx, http.StatusInternalServerError, err)
 		return
 	}
-	ctx.SetCookie("token", "Bearer "+token.(string), 60*60*24*7, "/", "localhost", false, true)
+	ctx.SetCookie("token", "Bearer "+token.(string), 60*60*24*7, "/", "app-go.adityaariizkyy.my.id", false, true)
 
 	utils.SuccessResponse(ctx, http.StatusOK, gin.H{"token": token})
 }
