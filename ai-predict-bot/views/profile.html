@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .profile-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .profile-info {
+            margin-bottom: 20px;
+        }
+
+        .profile-info label {
+            font-weight: bold;
+        }
+
+        .logout-btn {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background-color: #ff6659;
+        }
+
+        .actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .action-btn {
+            margin-bottom: 10px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .action-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>User Profile</h1>
+    <a href="/logout" class="logout-btn">Logout</a>
+</div>
+
+<div class="profile-container">
+    <div class="profile-info">
+        <label>Username:</label>
+        <span id="username">{{ .Username }}</span>
+    </div>
+
+    <div class="profile-info">
+        <label>Full Name:</label>
+        <span id="full-name">{{ .FullName }}</span>
+    </div>
+
+    <div class="actions">
+        <a href="/device-record/create" class="action-btn">Tambah Riwayat Device</a>
+        <a href="/chatbot" class="action-btn">Chatbot</a>
+        <a href="/tapas-bot" class="action-btn">Tapas Bot</a>
+        <a href="/device-record" class="action-btn">Show All Riwayat Device</a>
+    </div>
+</div>
+</body>
+</html>
