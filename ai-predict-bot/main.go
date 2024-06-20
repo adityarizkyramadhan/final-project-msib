@@ -422,7 +422,7 @@ func main() {
 	r.GET("/device-record/create", middleware.JWTMiddleware(), deviceRecordHandler.PageCreate)
 	r.POST("/device-record", middleware.JWTMiddleware(), deviceRecordHandler.Create)
 	r.GET("/logout", middleware.JWTMiddleware(), logout)
-	if err := r.Run(":8080"); err != nil {
+	if err := r.Run(":8081"); err != nil {
 		log.Fatal(err)
 	}
 }
