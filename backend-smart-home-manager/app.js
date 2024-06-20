@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const routes = require('./routes');
 const cors = require("cors");
 const app = express();
-
+const messageBus = require('./message-bus')()
 
 app.use(
   bodyParser.urlencoded({
